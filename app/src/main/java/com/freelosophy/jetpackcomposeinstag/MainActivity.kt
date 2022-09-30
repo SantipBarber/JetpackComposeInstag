@@ -9,7 +9,9 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import com.freelosophy.jetpackcomposeinstag.ui.screen.LoginScreen
 import com.freelosophy.jetpackcomposeinstag.ui.theme.JetpackComposeInstagTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,22 +24,21 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    LoginScreen()
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
+@Preview(
+    showBackground = true,
+    device = Devices.PIXEL_XL,
+    showSystemUi = true,
+)
 @Composable
 fun DefaultPreview() {
     JetpackComposeInstagTheme {
-        Greeting("Android")
+        LoginScreen()
     }
 }
